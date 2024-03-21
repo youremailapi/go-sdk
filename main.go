@@ -3,7 +3,7 @@ package youremailapigosdk
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -34,7 +34,7 @@ func SendEmail(apikey string, data SendEmailData) (*ResponseStructure, error) {
 		return nil, err
 	}
 
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := io.ReadAll(response.Body)
 
 	if err != nil {
 		response.Body.Close()

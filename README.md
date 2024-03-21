@@ -8,9 +8,10 @@ When you already have your account, you will need to upload an SMTP account with
 For more details, we recommend reading this [getting started](https://docs.youremailapi.com/docs/getting-started)
 
 ## Install this package
+
 ```text
 go get -u github.com/youremailapi/go-sdk
- ```
+```
 
 ## Start using it
 
@@ -26,6 +27,7 @@ import (
 func main() {
 
 	var variables = make(map[string]string)
+	var bcc = []string{"Federico Juretich <fedejuret@gmail.com>"};
 
 	variables["%user_first_name%"] = "Federico"
 	variables["%app_name%"] = "YouremailAPI"
@@ -36,6 +38,7 @@ func main() {
 		To:          "contact@youremailapi.com",
 		Subject:     "Some Subject",
 		Variables:   variables,
+		Bcc: bcc
 	})
 
 	if err != nil {

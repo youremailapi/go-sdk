@@ -7,4 +7,5 @@ type SendEmailData struct {
 	ReplyTo     map[string]string `json:"reply_to"`
 	Variables   map[string]string `json:"variables"`
 	To          string            `json:"to"`
+	Bcc         []string          `json:"bcc"`
 }
